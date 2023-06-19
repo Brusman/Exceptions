@@ -13,7 +13,7 @@ public class ShopRepositoryTest {
         repo.add(product2);
         repo.add(product3);
 
-        Product[] 
+        Product[]
         Product[] expected = repoProduct(product1, product2);
     }
 
