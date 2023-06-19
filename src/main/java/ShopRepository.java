@@ -17,7 +17,7 @@ public class ShopRepository {
         return products;
     }
 
-    public void remove(int id) {
+    public Product[] remove(int id) {
         if (findById(id) == null) {
             throw new NotFoundException(
                     "Товара с таким ID yt ceotcndetn: " + id
@@ -32,6 +32,7 @@ public class ShopRepository {
             }
         }
         products = tmp;
+        return products;
     }
 
     public Product findById(int id) {

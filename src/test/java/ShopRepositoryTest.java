@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class ShopRepositoryTest {
@@ -13,8 +14,9 @@ public class ShopRepositoryTest {
         repo.add(product2);
         repo.add(product3);
 
-        Product[]
-        Product[] expected = repoProduct(product1, product2);
+        Product[] expected = {product1, product3};
+        Product[] actual = repo.remove(24);
+        Assertions.assertArrayEquals(expected, actual);
     }
 
 }
