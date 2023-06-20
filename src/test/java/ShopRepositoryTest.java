@@ -19,4 +19,15 @@ public class ShopRepositoryTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
+    @Test
+    public void shouldNotDeleteByInvalidId() {
+        ShopRepository repo = new ShopRepository();
+        repo.add(product1);
+        repo.add(product2);
+        repo.add(product3);
+
+        Assertions.assertThrows(NotFoundException.class, () -> {
+            repo.remove(666);
+        });
+    }
 }
